@@ -1,12 +1,15 @@
 
 /* =========================
-   BASE
+   BASE CANVAS
 ========================= */
 body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
-  background: #0b0f14;
-  color: #e5e7eb;
+
+  /* single unified background */
+  background: #0a0a0f;
+  color: #e7e7ea;
+
   overflow-x: hidden;
 }
 
@@ -22,7 +25,7 @@ html {
   position: relative;
 }
 
-/* ensure UI stays above glow */
+/* keep everything above glow */
 .sidebar,
 .content {
   position: relative;
@@ -30,32 +33,33 @@ html {
 }
 
 /* =========================
-   CURSOR SPOTLIGHT
+   CURSOR AMBIENT LIGHT
 ========================= */
 .cursor-light {
   position: fixed;
-  width: 700px;
-  height: 700px;
+  width: 800px;
+  height: 800px;
 
   background: radial-gradient(
     circle at center,
-    rgba(45, 212, 191, 0.18),
-    rgba(167, 139, 250, 0.10),
+    rgba(255, 183, 77, 0.14),
+    rgba(255, 99, 132, 0.10),
+    rgba(56, 189, 248, 0.08),
     transparent 65%
   );
 
   transform: translate(-50%, -50%);
   pointer-events: none;
 
-  filter: blur(55px);
+  filter: blur(65px);
 
   z-index: 1;
 
-  transition: left 0.05s linear, top 0.05s linear;
+  transition: left 0.04s linear, top 0.04s linear;
 }
 
 /* =========================
-   SIDEBAR (FIXED VISIBILITY ISSUE)
+   SIDEBAR (NOW TRANSPARENT — NO DIVISION)
 ========================= */
 .sidebar {
   width: 28%;
@@ -65,49 +69,40 @@ html {
 
   padding: 70px 50px;
 
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(18px);
-
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-
-  transition: box-shadow 0.25s ease;
+  /* IMPORTANT: removed panel feel */
+  background: transparent;
 }
 
-/* subtle ambient reaction to glow */
-.sidebar:hover {
-  box-shadow: 0 0 80px rgba(45, 212, 191, 0.08);
-}
-
+/* heading */
 .sidebar h1 {
   font-size: 34px;
 
-  background: linear-gradient(90deg, #2dd4bf, #a78bfa);
+  background: linear-gradient(90deg, #ffb74d, #ff6384);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .sidebar p {
-  color: #9ca3af;
+  color: #a1a1aa;
 }
 
 /* =========================
-   NAV LINKS
+   NAVIGATION (floating style)
 ========================= */
 .sidebar nav a {
   display: block;
   margin: 14px 0;
 
-  color: #9ca3af;
+  color: #a1a1aa;
   text-decoration: none;
 
   transition: all 0.25s ease;
   position: relative;
 }
 
-/* hover animation */
 .sidebar nav a:hover {
-  color: #2dd4bf;
-  transform: translateX(8px);
+  color: #ffb74d;
+  transform: translateX(10px);
 }
 
 /* underline glow */
@@ -120,7 +115,7 @@ html {
   width: 0%;
   height: 1px;
 
-  background: linear-gradient(90deg, #2dd4bf, #a78bfa);
+  background: linear-gradient(90deg, #ffb74d, #ff6384);
   transition: width 0.3s ease;
 }
 
@@ -129,11 +124,12 @@ html {
 }
 
 /* =========================
-   CONTENT
+   CONTENT (no separate surface)
 ========================= */
 .content {
   width: 72%;
   padding: 70px;
+  background: transparent;
 }
 
 /* =========================
@@ -145,13 +141,12 @@ html {
 
 .section h2 {
   font-size: 20px;
-  color: #d1d5db;
+  color: #d4d4d8;
   margin-bottom: 20px;
-  letter-spacing: 0.5px;
 }
 
 /* =========================
-   CARD (GLASS + GLOW)
+   CARDS (floating on canvas)
 ========================= */
 .card {
   padding: 20px;
@@ -159,12 +154,13 @@ html {
 
   background: linear-gradient(
     135deg,
-    rgba(45, 212, 191, 0.08),
-    rgba(167, 139, 250, 0.06)
+    rgba(255, 183, 77, 0.06),
+    rgba(255, 99, 132, 0.05),
+    rgba(56, 189, 248, 0.04)
   );
 
   border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 
   margin-bottom: 16px;
 
@@ -172,15 +168,16 @@ html {
   cursor: pointer;
 }
 
-/* hover lift + glow */
+/* hover lift */
 .card:hover {
   transform: translateY(-8px) scale(1.02);
 
-  border-color: rgba(45, 212, 191, 0.35);
+  border-color: rgba(255, 183, 77, 0.35);
 
   box-shadow:
-    0 18px 45px rgba(45, 212, 191, 0.12),
-    0 10px 25px rgba(167, 139, 250, 0.08);
+    0 20px 50px rgba(255, 183, 77, 0.10),
+    0 12px 30px rgba(255, 99, 132, 0.08),
+    0 0 60px rgba(56, 189, 248, 0.05);
 }
 
 /* =========================
@@ -193,6 +190,6 @@ p {
 
 /* email accent */
 .email {
-  color: #2dd4bf;
+  color: #ffb74d;
   font-weight: 500;
 }
