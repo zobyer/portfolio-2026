@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
-import Technologies from "./components/Technologies"; 
+import Technologies from "./components/Technologies";
 import Education from "./components/Education";
 import ResearchPaper from "./components/ResearchPaper";
 
@@ -15,16 +16,16 @@ import Contact from "./components/Contact";
 
 type MousePosition = { x: number; y: number };
 
-const containerVariants = {
+// Explicitly type the variant objects
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
-
 
 function AppContent() {
   const [mouse, setMouse] = useState<MousePosition>({ x: 0, y: 0 });
@@ -102,7 +103,7 @@ function AppContent() {
               </motion.div>
             </motion.div>
           </Section>
-          
+
           <Section id="research" title="Research & Publication">
             <motion.div
               variants={containerVariants}
