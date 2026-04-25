@@ -139,24 +139,6 @@ body::before {
   padding: 70px 60px 100px 60px;
 }
 
-/* ========== GLOBAL SECTION HEADINGS (if not in Section.css) ========== */
-.section {
-  margin-bottom: 100px;
-  scroll-margin-top: 40px;
-}
-
-.section h2 {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 32px;
-  letter-spacing: -0.01em;
-  display: inline-block;
-  border-bottom: 3px solid var(--heading-border);
-  padding-bottom: 8px;
-}
-
-
 /* ========== ABOUT SECTION SPACING ========== */
 .about-content p {
   margin-bottom: 1.4em;
