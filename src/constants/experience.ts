@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
     bullets: [
       "Migrated PickBike to new environment, enabling product ownership transition via knowledge transfer with prior team",
       "Enabled new IoT bike integrations via third-party TCP service, handling protocol communication (speed setup/rental commands) while preserving legacy device support",
-      "Ingested live telemetry from 500+ IoT bikes every 20s via long-polling background service, processing 1,500 updates/min",
+      "Ingested live telemetry from 500+ IoT bikes every 20s via long-polling background service, processing 2,000 updates/min",
       "Automated OneSignal user data sync via background workers: handled registrations/rentals/suspensions, optimized web server performance, and activated behavioral marketing",
       "Streamlined user onboarding: reduced registration steps by 60% (email/phone only for base features), deferring OCR/license checks until rental activation",
       "Led migration of Stripe integration to latest API version, resolving breaking changes across payment workflows without service disruption",
