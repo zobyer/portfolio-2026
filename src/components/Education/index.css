@@ -114,3 +114,18 @@
     align-self: flex-start;
   }
 }
+
+@media (max-width: 480px) {
+  .edu-card {
+    padding: 20px;
+  }
+  .edu-header h3 {
+    font-size: 1.2rem;
+  }
+  .edu-degree, .edu-cgpa {
+    font-size: 0.85rem;
+  }
+  .edu-achievement {
+    padding: 12px;
+  }
+}

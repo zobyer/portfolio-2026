@@ -106,6 +106,104 @@ body::before {
   z-index: 1;
 }
 
+/* ========== SIDEBAR (restored) ========== */
+.sidebar {
+  width: 28%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 70px 48px;
+  background: var(--sidebar-bg);
+  backdrop-filter: none;
+  border-right: none;
+  box-shadow: none;
+  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-top {
+  flex: 1;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.sidebar h1 {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-violet), var(--accent-coral), var(--accent-mint));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.sidebar p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 48px;
+  border-left: 3px solid var(--accent-violet);
+  padding-left: 14px;
+  font-weight: 500;
+}
+
+.sidebar nav a {
+  display: block;
+  margin: 20px 0;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar nav a:hover {
+  color: var(--accent-violet);
+  transform: translateX(8px);
+}
+
+.sidebar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-violet), var(--accent-coral));
+  transition: width 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.sidebar nav a:hover::after {
+  width: 40%;
+}
+
+/* Social icons in sidebar */
+.social-icons {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.social-icon {
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: var(--accent-violet);
+  transform: translateY(-6px) scale(1.1);
+}
+
 /* ========== FIXED THEME TOGGLE (top-right) ========== */
 .theme-toggle-fixed {
   position: fixed;
@@ -136,6 +234,115 @@ body::before {
 .content {
   width: 72%;
   padding: 70px 60px 100px 60px;
+}
+
+/* ========== GLOBAL SECTION HEADINGS (if not in Section.css) ========== */
+.section {
+  margin-bottom: 100px;
+  scroll-margin-top: 40px;
+}
+
+.section h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  border-bottom: 3px solid var(--heading-border);
+  padding-bottom: 8px;
+}
+
+/* ========== EXPERIENCE CARD ========== */
+.exp-card {
+  padding: 28px;
+  border-radius: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  margin-bottom: 24px;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.05);
+}
+
+.exp-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: var(--card-hover-border);
+  box-shadow: 0 25px 35px -12px rgba(139, 92, 246, 0.2);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.exp-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.exp-date {
+  display: inline-block;
+  background: var(--exp-date-bg);
+  color: var(--exp-date-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.exp-tech, .exp-product {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.tech-label, .product-label {
+  font-weight: 600;
+  color: var(--accent-violet);
+  background: var(--exp-date-bg);
+  padding: 2px 8px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.exp-card ul {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+.exp-card li {
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ========== CONTACT SECTION ========== */
+p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.email {
+  color: var(--accent-violet);
+  font-weight: 600;
+  background: var(--email-bg);
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 40px;
+  margin-top: 12px;
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--email-border);
 }
 
 /* ========== RESPONSIVE ========== */
@@ -190,6 +397,16 @@ body::before {
     padding: 8px 14px;
     font-size: 0.75rem;
   }
+  .exp-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .exp-date {
+    align-self: flex-start;
+  }
+  .section h2 {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -199,11 +416,11 @@ body::before {
   .content {
     padding: 30px 20px;
   }
-  .card, .exp-card {
+  .exp-card {
     padding: 20px;
   }
   .section h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   .social-icon {
     font-size: 1.5rem;
