@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
+import './index.css';
+
 type SectionProps = {
   id: string;
   title: string;

@@ -11,6 +11,7 @@ import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
 import { experiences } from "./constants/experience";
 import "./index.css";
+import Contact from "./components/Contact";
 
 type MousePosition = { x: number; y: number };
 
@@ -116,10 +117,7 @@ function AppContent() {
           </Section>
 
           <Section id="contact" title="Contact">
-            <p>Let's build something meaningful together.</p>
-            <p className="email">zobyer.ahm@gmail.com</p>
-            <p className="phone">📞 (+880) 1879022872</p>
-            {/* social links removed from here */}
+            <Contact />
           </Section>
         </main>
       </div>

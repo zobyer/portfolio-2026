@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
+import './index.css';
+
+
 export default function Sidebar() {
   return (
     <aside className="sidebar">
