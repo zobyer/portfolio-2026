@@ -13,7 +13,7 @@ export const navLinks: NavLink[] = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Education", href: "#education" },
-  { name: "Research", href: "#research" },
+  // { name: "Research", href: "#research" },
   { name: "Contact", href: "#contact" },
   { name: "Resume", href: "/zobyer_fullstack_dev.pdf", external: true, icon: FiDownload }, // 👈 with icon
 ];
