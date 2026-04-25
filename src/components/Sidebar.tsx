@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { useTheme } from "../context/ThemeContext";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export default function Sidebar() {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <aside className="sidebar">
       <div className="sidebar-top">
@@ -19,9 +17,35 @@ export default function Sidebar() {
         </nav>
       </div>
       <div className="sidebar-bottom">
-        <button onClick={toggleTheme} className="theme-toggle">
-          {theme === 'light' ? '🌙 Dark mode' : '☀️ Light mode'}
-        </button>
+        <div className="social-icons">
+          <a
+            href="https://github.com/zobyer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="GitHub"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="https://linkedin.com/in/a-h-m-zobyer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://facebook.com/your-profile"   // replace with your real Facebook URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="Facebook"
+          >
+            <FaFacebook />
+          </a>
+        </div>
       </div>
     </aside>
   );
