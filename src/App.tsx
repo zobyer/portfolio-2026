@@ -51,37 +51,17 @@ function AppContent() {
           <Section id="about" title="About">
             <div className="about-content">
               <p>
-                I’m a Full‑Stack Developer with 4+ years of experience crafting performant
-                web applications and real‑time systems. My core stack revolves around
-                Ruby on Rails, React, and Vue, but I’m equally at home on the backend—
-                designing scalable architectures, optimizing database queries, and
-                orchestrating background jobs with Sidekiq or Celery to keep services
-                humming under heavy load.
-              </p>
-              <p>
-                I thrive at the intersection of product thinking and engineering. At
-                WellDev, I was a core member of the team that executed the technical
-                migration of Pick‑E‑Bike, enabling the company to take full product
-                ownership. I integrated new IoT bike models alongside legacy devices,
-                ingested live telemetry from 500+ bikes every 20 seconds, and automated
-                OneSignal user data sync to unlock behavioural marketing—all while slashing
-                user registration steps by 60% so riders could get on the road faster.
-                Stripe payment upgrades, background worker tuning, and rigorous test
-                coverage (RSpec, Minitest, RTL) are part of my daily discipline.
-              </p>
-              <p>
-                On the frontend, I’ve built responsive, accessible UIs for auction‑style
-                marketplaces, custom digital shop builders, and pet e‑commerce platforms—
-                using React, Next.js, Vue, and Nuxt to deliver fast, SEO‑friendly
-                experiences. I enjoy creating shared component libraries and hooks that
-                speed up development without sacrificing quality.
-              </p>
-              <p>
-                I’m a continuous learner who values clean code, collaborative
-                problem‑solving, and systems that just work. When I’m not shipping
-                features, you’ll find me exploring new tools, contributing to internal
-                knowledge‑sharing, or refining the developer experience for my team.
-              </p>
+  I'm a Full‑Stack Developer with 4+ years of experience building fast web apps and real‑time systems. My main tools are Ruby on Rails, React, and Vue, but I'm also comfortable on the backend — designing solid system architectures, improving database queries, and managing background jobs with Sidekiq or Celery to keep services running smoothly under moderate to heavy load.
+</p>
+<p>
+  I really enjoy working at the intersection of product needs and clean engineering. At WellDev, I was part of the team that migrated Pick‑E‑Bike to a new environment, helping the company take full ownership of the product. I integrated new IoT bike models alongside older ones, processing an average of 2,000 telemetry updates per minute from the live fleet. I also automated OneSignal user sync to enable behavioral marketing — all while cutting user registration steps by 60%, so riders could start faster. I handled Stripe payment upgrades, tuned background workers, and wrote solid tests (RSpec, Minitest, RTL) as part of my daily routine.
+</p>
+<p>
+  On the frontend, I've built accessible, responsive UIs for auction marketplaces, custom digital shop builders, and pet e‑commerce sites — using React, Next.js, Vue, and Nuxt to create fast, SEO‑friendly experiences. I like building reusable components and custom hooks that help the team move faster without cutting corners.
+</p>
+<p>
+  I'm always learning and care about clean code, solving problems with others, and building systems that just work. When I'm not shipping features, I explore new tools, share knowledge with my team, or think about better ways to design cloud infrastructure and system architecture.
+</p>
             </div>
           </Section>
 
