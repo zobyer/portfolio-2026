@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
-
-import './index.css';
-
+import { navLinks, socialLinks } from "../../constants/sidebar";
+import "./index.css";
 
 export default function Sidebar() {
   return (
@@ -13,41 +11,30 @@ export default function Sidebar() {
         </motion.h1>
         <p>Software Engineer · Full‑Stack Developer</p>
         <nav>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.href}>
+              {link.name}
+            </a>
+          ))}
         </nav>
       </div>
       <div className="sidebar-bottom">
         <div className="social-icons">
-          <a
-            href="https://github.com/zobyer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon"
-            aria-label="GitHub"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://linkedin.com/in/a-h-m-zobyer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://facebook.com/your-profile"   // replace with your real Facebook URL
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon"
-            aria-label="Facebook"
-          >
-            <FaFacebook />
-          </a>
+          {socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                aria-label={social.ariaLabel}
+              >
+                <Icon />
+              </a>
+            );
+          })}
         </div>
       </div>
     </aside>

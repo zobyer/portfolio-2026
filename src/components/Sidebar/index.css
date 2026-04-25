@@ -76,3 +76,23 @@
 .sidebar nav a:hover::after {
   width: 40%;
 }
+
+
+/* Social icons in sidebar (replaces old theme toggle) */
+.social-icons {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.social-icon {
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  display: inline-block;
+}
+
+.social-icon:hover {
+  color: var(--accent-violet);
+  transform: translateY(-6px) scale(1.1);
+}
