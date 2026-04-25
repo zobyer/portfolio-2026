@@ -6,6 +6,7 @@ import ProjectCard from "./components/ProjectCard";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import { experiences } from "./constants/experience";
 import "./index.css";
+import Technologies from "./components/Technologies";
 
 type MousePosition = { x: number; y: number };
 
@@ -53,6 +54,10 @@ function AppContent() {
               Focused on backend scalability, real-time IoT systems, and performance-driven frontends. 
               Reduced user onboarding friction by 60% and automated multi-service sync at scale.
             </p>
+          </Section>
+
+          <Section id="tech" title="Technologies">
+            <Technologies />
           </Section>
 
           <Section id="experience" title="Experience">
