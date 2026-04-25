@@ -12,7 +12,12 @@ export default function Sidebar() {
         <p>Software Engineer · Full‑Stack Developer</p>
         <nav>
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href}>
+            <a
+              key={link.name}
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+            >
               {link.name}
             </a>
           ))}

@@ -1,12 +1,19 @@
-// src/constants/sidebar.ts
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 import type { IconType } from "react-icons";
 
-export const navLinks = [
+export type NavLink = {
+  name: string;
+  href: string;
+  external?: boolean;
+};
+
+export const navLinks: NavLink[] = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Education", href: "#education" },
+  { name: "Research", href: "#research" },
   { name: "Contact", href: "#contact" },
+  { name: "Resume", href: "/zobyer_fullstack_dev.pdf", external: true },
 ];
 
 export type SocialLink = {
@@ -31,7 +38,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Facebook",
-    url: "https://facebook.com/your-profile", // Replace with your real URL
+    url: "https://facebook.com/your-profile",
     icon: FaFacebook,
     ariaLabel: "Facebook",
   },
