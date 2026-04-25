@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
 import Technologies from "./components/Technologies"; 
+import Education from "./components/Education";
+import ResearchPaper from "./components/ResearchPaper";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
 import { experiences } from "./constants/experience";
 import "./index.css";
-import Education from "./components/Education";
 
 type MousePosition = { x: number; y: number };
 
@@ -100,7 +101,19 @@ function AppContent() {
               </motion.div>
             </motion.div>
           </Section>
-
+          
+          <Section id="research" title="Research & Publication">
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <motion.div variants={itemVariants}>
+                <ResearchPaper />
+              </motion.div>
+            </motion.div>
+          </Section>
 
           <Section id="contact" title="Contact">
             <p>Let's build something meaningful together.</p>
