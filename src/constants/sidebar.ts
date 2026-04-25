@@ -40,7 +40,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Facebook",
-    url: "https://facebook.com/your-profile", // replace
+    url: "https://www.facebook.com/zobyer.ajmir/",
     icon: FaFacebook,
     ariaLabel: "Facebook",
   },

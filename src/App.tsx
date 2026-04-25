@@ -16,7 +16,6 @@ import "./index.css";
 
 type MousePosition = { x: number; y: number };
 
-// Explicitly type the variant objects
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
@@ -41,7 +40,6 @@ function AppContent() {
 
   return (
     <>
-      {/* Fixed theme toggle button */}
       <button onClick={toggleTheme} className="theme-toggle-fixed">
         {theme === 'light' ? '🌙 Dark mode' : '☀️ Light mode'}
       </button>
@@ -51,11 +49,40 @@ function AppContent() {
         <Sidebar />
         <main className="content">
           <Section id="about" title="About">
-            <p>
-              Full-Stack Developer with 4+ years of experience in Ruby on Rails, React, and Vue. 
-              Focused on backend scalability, real-time IoT systems, and performance-driven frontends. 
-              Reduced user onboarding friction by 60% and automated multi-service sync at scale.
-            </p>
+            <div className="about-content">
+              <p>
+                I’m a Full‑Stack Developer with 4+ years of experience crafting performant
+                web applications and real‑time systems. My core stack revolves around
+                Ruby on Rails, React, and Vue, but I’m equally at home on the backend—
+                designing scalable architectures, optimizing database queries, and
+                orchestrating background jobs with Sidekiq or Celery to keep services
+                humming under heavy load.
+              </p>
+              <p>
+                I thrive at the intersection of product thinking and engineering. At
+                WellDev, I was a core member of the team that executed the technical
+                migration of Pick‑E‑Bike, enabling the company to take full product
+                ownership. I integrated new IoT bike models alongside legacy devices,
+                ingested live telemetry from 500+ bikes every 20 seconds, and automated
+                OneSignal user data sync to unlock behavioural marketing—all while slashing
+                user registration steps by 60% so riders could get on the road faster.
+                Stripe payment upgrades, background worker tuning, and rigorous test
+                coverage (RSpec, Minitest, RTL) are part of my daily discipline.
+              </p>
+              <p>
+                On the frontend, I’ve built responsive, accessible UIs for auction‑style
+                marketplaces, custom digital shop builders, and pet e‑commerce platforms—
+                using React, Next.js, Vue, and Nuxt to deliver fast, SEO‑friendly
+                experiences. I enjoy creating shared component libraries and hooks that
+                speed up development without sacrificing quality.
+              </p>
+              <p>
+                I’m a continuous learner who values clean code, collaborative
+                problem‑solving, and systems that just work. When I’m not shipping
+                features, you’ll find me exploring new tools, contributing to internal
+                knowledge‑sharing, or refining the developer experience for my team.
+              </p>
+            </div>
           </Section>
 
           <Section id="tech" title="Technologies">
