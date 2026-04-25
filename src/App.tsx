@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
-import ProjectCard from "./components/ProjectCard";
+import Technologies from "./components/Technologies"; 
+
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
+
 import { experiences } from "./constants/experience";
 import "./index.css";
-import Technologies from "./components/Technologies";
+import Education from "./components/Education";
 
 type MousePosition = { x: number; y: number };
 
@@ -20,10 +23,6 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const projectVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
-};
 
 function AppContent() {
   const [mouse, setMouse] = useState<MousePosition>({ x: 0, y: 0 });
@@ -89,33 +88,19 @@ function AppContent() {
             </motion.div>
           </Section>
 
-          <Section id="projects" title="Projects">
+          <Section id="education" title="Education">
             <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
             >
-              <motion.div variants={projectVariants}>
-                <ProjectCard
-                  title="Pick-E-Bike IoT Platform"
-                  description="IoT bike rental system with real-time telemetry ingestion (500+ bikes, 1,500 updates/min), Stripe integration, and automated user sync for behavioral marketing."
-                />
-              </motion.div>
-              <motion.div variants={projectVariants}>
-                <ProjectCard
-                  title="Competitive Marketplace (MSM)"
-                  description="Real-time bidding marketplace with RTK Query caching, auction-style price discovery, and shared component library with full test coverage."
-                />
-              </motion.div>
-              <motion.div variants={projectVariants}>
-                <ProjectCard
-                  title="Multi-Channel E‑commerce Sync"
-                  description="FastAPI + Celery + RabbitMQ backend that synchronizes inventory/orders across Amazon, eBay, and WooCommerce with message-driven architecture."
-                />
+              <motion.div variants={itemVariants}>
+                <Education />
               </motion.div>
             </motion.div>
           </Section>
+
 
           <Section id="contact" title="Contact">
             <p>Let's build something meaningful together.</p>
