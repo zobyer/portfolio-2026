@@ -1,10 +1,12 @@
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";  // 👈 download icon
 import type { IconType } from "react-icons";
 
 export type NavLink = {
   name: string;
   href: string;
   external?: boolean;
+  icon?: IconType;      // optional icon
 };
 
 export const navLinks: NavLink[] = [
@@ -13,7 +15,7 @@ export const navLinks: NavLink[] = [
   { name: "Education", href: "#education" },
   { name: "Research", href: "#research" },
   { name: "Contact", href: "#contact" },
-  { name: "Resume", href: "/zobyer_fullstack_dev.pdf", external: true },
+  { name: "Resume", href: "/zobyer_fullstack_dev.pdf", external: true, icon: FiDownload }, // 👈 with icon
 ];
 
 export type SocialLink = {
@@ -38,7 +40,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Facebook",
-    url: "https://facebook.com/your-profile",
+    url: "https://facebook.com/your-profile", // replace
     icon: FaFacebook,
     ariaLabel: "Facebook",
   },

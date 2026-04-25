@@ -153,3 +153,41 @@
     font-size: 1.5rem;
   }
 }
+
+
+/* Resume link with animated icon */
+.resume-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.resume-icon {
+  font-size: 1rem;
+  animation: gentlePulse 1.8s ease-in-out infinite;
+  transition: all 0.2s ease;
+}
+
+@keyframes gentlePulse {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-2px);
+    opacity: 1;
+    filter: drop-shadow(0 0 2px var(--accent-violet));
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+}
+
+/* Optional: change icon color on link hover */
+.resume-link:hover .resume-icon {
+  animation: none;
+  transform: translateY(-2px) scale(1.1);
+  color: var(--accent-violet);
+  filter: drop-shadow(0 0 4px var(--accent-violet));
+}

@@ -11,16 +11,21 @@ export default function Sidebar() {
         </motion.h1>
         <p>Software Engineer · Full‑Stack Developer</p>
         <nav>
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noopener noreferrer" : undefined}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={link.name === "Resume" ? "resume-link" : ""}
+              >
+                {link.name}
+                {Icon && <Icon className="resume-icon" />}
+              </a>
+            );
+          })}
         </nav>
       </div>
       <div className="sidebar-bottom">
