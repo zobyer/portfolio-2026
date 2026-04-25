@@ -5,14 +5,14 @@ import type { Variants } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
 import Technologies from "./components/Technologies";
+import Experience from "./components/Experience";
 import Education from "./components/Education";
 import ResearchPaper from "./components/ResearchPaper";
+import Contact from "./components/Contact";
 
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
-import { experiences } from "./constants/experience";
 import "./index.css";
-import Contact from "./components/Contact";
 
 type MousePosition = { x: number; y: number };
 
@@ -63,32 +63,7 @@ function AppContent() {
           </Section>
 
           <Section id="experience" title="Experience">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              {experiences.map((exp, idx) => (
-                <motion.div key={idx} variants={itemVariants} className="exp-card">
-                  <div className="exp-header">
-                    <h3>{exp.role} @ {exp.company}</h3>
-                    <div className="exp-date">{exp.date}</div>
-                  </div>
-                  <div className="exp-tech">
-                    <span className="tech-label">Tech:</span> {exp.tech}
-                  </div>
-                  <div className="exp-product">
-                    <span className="product-label">Product:</span> {exp.product}
-                  </div>
-                  <ul>
-                    {exp.bullets.map((bullet, i) => (
-                      <li key={i}>{bullet}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </motion.div>
+            <Experience />
           </Section>
 
           <Section id="education" title="Education">
