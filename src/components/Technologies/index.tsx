@@ -16,7 +16,7 @@ import {
   SiTailwindcss,
   SiDatadog,
 } from "react-icons/si";
-import { FaAws, FaClipboardList } from "react-icons/fa";
+import { FaAws } from "react-icons/fa";
 import './index.css';
 
 const technologies = [
@@ -40,7 +40,7 @@ const technologies = [
   { name: "CSS", icon: SiCss },
   { name: "Tailwind CSS", icon: SiTailwindcss },
   // Cloud & Monitoring
-  { name: "AWS", icon: FaAws },
+  { name: "AWS", icon: FaAws, learning: true },
   { name: "Datadog", icon: SiDatadog },
 ];
 
@@ -50,7 +50,8 @@ export default function Technologies() {
       {technologies.map((tech, idx) => {
         const Icon = tech.icon;
         return (
-          <div key={idx} className="tech-item">
+          <div key={idx} className={`tech-item ${tech.learning ? 'learning' : ''}`}>
+            {tech.learning && <span className="learning-badge">Learning</span>}
             <Icon className="tech-icon" />
             <span className="tech-name">{tech.name}</span>
           </div>
